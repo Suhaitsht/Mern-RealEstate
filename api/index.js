@@ -3,10 +3,12 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const UserRouter = require("./Routes/userRoutes");
 const AuthRouter = require("./Routes/authRoutes");
+const cookieParser = require("cookie-parser");
 
 dotenv.config();
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 mongoose
   .connect(process.env.MONOGODB)
