@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const UserRouter = require("./Routes/userRoutes");
 const AuthRouter = require("./Routes/authRoutes");
+const ListingRouter = require("./Routes/listingRoute");
+
 const cookieParser = require("cookie-parser");
 
 dotenv.config();
@@ -21,6 +23,7 @@ mongoose
 
 app.use("/api/user", UserRouter);
 app.use("/api/auth", AuthRouter);
+app.use("/api/listing", ListingRouter);
 
 app.listen(3000, () => {
   console.log("Server is running port is 3000!");
